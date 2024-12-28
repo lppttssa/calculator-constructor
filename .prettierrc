@@ -1,0 +1,30 @@
+{
+    "plugins": [
+    "@trivago/prettier-plugin-sort-imports"
+],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "importOrder": [
+        "^react",
+        "^next",
+        "^@apollo",
+        "^(?!components|utils|hooks|models)[a-z]",
+        "^utils|utils$",
+        "^hooks|hooks$|hook$",
+        "^components.*(?<!queries|getProps|scss|css|types|query)$",
+        "^./",
+        "^../",
+        "\\.(scss|css)$",
+        "^type|^models|type$|types$",
+        "\\getProps$",
+        "\\queries$|query$"
+    ],
+    "bracketSpacing": true,
+    "singleQuote": true,
+    "printWidth": 140,
+    "semi": true,
+    "tabWidth": 4,
+    "useTabs": false,
+    "jsxSingleQuote": false,
+    "arrowParens": "always"
+}

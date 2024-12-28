@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: path.join(__dirname, "src", "index.tsx"),
+    entry: path.join(__dirname, 'src', 'index.tsx'),
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -11,11 +11,11 @@ module.exports = {
     mode: 'development',
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, "public", "index.html"),
+            template: path.join(__dirname, 'public', 'index.html'),
         }),
         new webpack.ProvidePlugin({
-            'React': 'react'
-        })
+            React: 'react',
+        }),
     ],
     module: {
         rules: [
@@ -31,16 +31,14 @@ module.exports = {
             },
             {
                 test: /\.(s(a|c)ss)$/,
-                use: ['style-loader','css-loader', 'sass-loader']
-            }
-        ]
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
+        ],
     },
     resolve: {
+        alias: {
+            '@src': path.resolve(__dirname, 'src/'),
+        },
         extensions: ['.tsx', '.ts', '.js'],
-    },
-    devServer: {
-        hot: true,
-        port: 3000,
-        open: true
     },
 };
